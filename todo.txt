@@ -3,3 +3,5 @@ mklink /D "C:\Users\USER_NAME\AppData\Roaming\Apple Computer\MobileSync\Backup" 
 
 // iCloud インストール前に実行
 mklink /d "C:\Users\USER_NAME\iCloudDrive" "J:\iCloudDrive"
+
+mklink /d "C:\Users\USER_NAME\Pictures\iCloud Photos" "J:\iCloud Photos"
