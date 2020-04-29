@@ -1,0 +1,26 @@
+autodetach off
+bell_msg "^G"
+
+# encode
+defutf8 on
+defkanji utf8
+encoding utf8 utf8
+defencoding utf8
+
+defscrollback 10000
+
+escape ^t^t
+
+shell -$SHELL
+
+startup_message off
+vbell off
+
+term xterm-256color
+defbce "on"
+termcapinfo xterm-256color 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+termcapinfo xterm-256color hs@:is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l\E[?1;4;6l
+termcapinfo xterm* 'Co#256:pa#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+termcapinfo xterm* ti@:te@
+
+hardstatus alwayslastline "%{=b kw}[%Y-%m-%d %02c] %`%-w%{=b bm}%n %t%{-}%+w"
