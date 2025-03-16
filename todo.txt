@@ -3,8 +3,8 @@ mklink /D "C:\Users\USER_NAME\AppData\Roaming\Apple Computer\MobileSync\Backup" 
 
 // iCloud インストール前に実行、ドライブパスて適宜かえる
 // ディレクトリ未作成時
-mklink /d "C:\Users\USER_NAME\iCloudDrive" "J:\iCloudDrive"
-mklink /d "C:\Users\USER_NAME\Pictures\iCloud Photos" "J:\iCloud Photos"
+mklink /d "C:\Users\USER_NAME\iCloudDrive" "F:\iCloudDrive"
+mklink /d "C:\Users\USER_NAME\Pictures\iCloud Photos" "F:\iCloud Photos"
 
 // すでに保存場所のディレクトリ作成している場合はオプションは以下の通り
 mklink /J "C:\Users\USER_NAME\iCloudDrive" "F:\iCloudDrive"
