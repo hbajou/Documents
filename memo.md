@@ -31,7 +31,27 @@
 
 ---
 
-## 5. WindowsとLinuxでのLLM運用比較
+## 5. ローカルLLM GPU性能とメモリ量早見表
+| モデル名 | パラメータ数 | VRAM目安 | 特徴 |
+|----------|-------------|----------|------|
+| Phi-3 Mini (3.8B) | 3.8B | 4〜6 GB | 軽量、ノートPCでも可 |
+| Mistral 7B | 7B | 8〜12 GB | 高性能、小規模GPUで可 |
+| LLaMA 2 13B | 13B | 16〜24 GB | 中規模モデル、詳細な回答 |
+| Mixtral 8x7B (MoE) | 47B（活性化時は約13B） | 24〜32 GB | Mixture of Experts構造で高性能 |
+| LLaMA 2 70B | 70B | ≥ 80 GB | 超大規模、ほぼクラウド専用 |
+
+---
+
+## 6. RTX4060 8GB環境での推奨モデル
+- **7Bクラス（Q4量子化）**が快適ゾーン
+  - Mistral 7B
+  - Phi-3 Mini
+  - Llama 3/3.1 8B（軽量量子化）
+- GUI派はLM Studio、軽量派はOllama推奨
+
+---
+
+## 7. WindowsとLinuxでのLLM運用比較
 | 項目 | Windows | Linux |
 |------|---------|-------|
 | 初期セットアップ難易度 | 低 | 中〜高 |
@@ -43,7 +63,7 @@
 
 ---
 
-## 6. Windowsライセンス移行
+## 8. Windowsライセンス移行
 - Retail版は別PCに移せる
 - 移行手順：
   1. 旧PCでキー解除（`slmgr /upk`、`slmgr /cpky`）
