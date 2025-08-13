@@ -36,17 +36,33 @@ for filename in os.listdir(folder_path):
 
 ## ChatGPT生成コード（改善版）
 ```python
-import os
 from PIL import Image
+import os
 
-folder_path = "/path/to/your/folder"
+# 変換元のフォルダパス
+input_folder = r"C:\path\to\input"   # ここを変更
+# 変換後の保存フォルダ
+output_folder = r"C:\path\to\output" # ここを変更
 
-for filename in os.listdir(folder_path):
+# 出力先フォルダがなければ作成
+os.makedirs(output_folder, exist_ok=True)
+
+for filename in os.listdir(input_folder):
     if filename.lower().endswith(".png"):
-        file_path = os.path.join(folder_path, filename)
-        img = Image.open(file_path).convert("RGB")  # 透過PNG対策
-        output_filename = os.path.splitext(file_path)[0] + ".jpeg"
-        img.save(output_filename, "JPEG")
+        # 入力ファイルパス
+        input_path = os.path.join(input_folder, filename)
+        # 出力ファイルパス（拡張子をjpgに変更）
+        output_path = os.path.join(output_folder, os.path.splitext(filename)[0] + ".jpg")
+
+        # 画像を開いて変換
+        with Image.open(input_path) as img:
+            # RGBAの場合はRGBに変換
+            if img.mode in ("RGBA", "P"):
+                img = img.convert("RGB")
+            img.save(output_path, "JPEG", quality=95)
+
+print("変換が完了しました！")
+
 ```
 
 ---
