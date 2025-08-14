@@ -12,15 +12,11 @@ local function remapKey(modifiers, key, keyCode)
 end
 
 local function disableAllHotkeys()
-   for k, v in pairs(hs.hotkey.getHotkeys()) do
-      v['_hk']:disable()
-   end
+   hs.hotkey.disableAll()
 end
 
 local function enableAllHotkeys()
-   for k, v in pairs(hs.hotkey.getHotkeys()) do
-      v['_hk']:enable()
-   end
+   hs.hotkey.enableAll()
 end
 
 local function handleGlobalAppEvent(name, event, app)
